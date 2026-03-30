@@ -17,4 +17,10 @@ jobs:
                 exit 0
             - name: Say goodbye
               run: echo 'Goodbye'
+    echo-finalJob:
+        runs-on: ubuntu-latest
+        steps:
+            - name: final step
+              run: echo 'Final step executed'
+              
             
