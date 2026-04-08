@@ -17,6 +17,7 @@ jobs:
       - name: Install Dependencies
         run: |
           cd 04-Using\ Actions/react-app
+          pwd
           npm ci
       - name: Run unit test
         run: npm run test
