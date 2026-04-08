@@ -11,4 +11,4 @@ jobs:
     echo:
         runs-on: ubuntu-latest
         steps:
-            - run: echo 'Running code on PR opened or synchronize on main'
+            - run: echo 'Running code on PR closed on main'
