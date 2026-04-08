@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: current directory
+        run: pwd
       - name: Setup node
         uses: actions/setup-node@v4
         with:
@@ -19,8 +21,7 @@ jobs:
         run: npm ci
       - name: Run unit test
         run: npm run test
-      - name: current directory
-        run: pwd
+
 
 
       
