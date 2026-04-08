@@ -14,7 +14,7 @@ jobs:
           node-version: '20.x'
       - name: Install Dependencies
         run: npm ci
-        working-directory: /workspaces/git-hub-actions-course/04-Using Actions/react-app
+        working-directory: 04-Using Actions/react-app
 
       
     
