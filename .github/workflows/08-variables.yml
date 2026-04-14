@@ -5,16 +5,16 @@ on:
     workflow_dispatch:
 
 env:
-    workflow_var: "This is workflow variable"
-    overwritten: "This variable will be overwritten in job and step level"
+    workflow_var: 'This is workflow variable'
+    overwritten: 'This variable will be overwritten in job and step level'
     
 
 jobs:
     echo:
         runs-on: ubuntu-latest
         env:
-            JOB_VAR: "This is Job variable"
-            overwritten: "I have been overwritten in job level"
+            JOB_VAR: 'This is Job variable'
+            overwritten: 'I have been overwritten in job level'
         steps:
             - name: Print Env variables
               env: 
@@ -28,7 +28,7 @@ jobs:
               echo "Overwritten variable in step level: ${{ env.overwritten }}"
             - name: Overwritten job variable
               env:
-                overwritten: "I have been overwritten in step level"
+                overwritten: 'I have been overwritten in step level'
               run: |
                 echo "Overwritten variable in job level: ${{env.overwritten}}"
 
