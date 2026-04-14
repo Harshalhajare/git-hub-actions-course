@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 name: 04- Using Actions
 
 on: workflow_dispatch
@@ -27,3 +28,13 @@ jobs:
       
     
 
+=======
+name: 04- Using Actions
+
+on: push
+
+jobs:
+    build:
+        runs on: ubuntu-latest
+        
+>>>>>>> 96d2020 (08-using variables)
