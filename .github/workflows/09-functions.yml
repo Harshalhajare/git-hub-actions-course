@@ -16,7 +16,7 @@ jobs:
                 ${{toJson(github.event.pull_request.labels)}}
                 EOF
             - name: Bug fix Step
-              if: ${{!cancelled()&& contains(github.event.pull_request.title, 'fix')}}
+              if: ${{ !cancelled() && contains(github.event.pull_request.title, 'fix') }}
               run: echo "This PR is for bug fix"
             - name : sleep for 20 secs
               run: sleep 20
