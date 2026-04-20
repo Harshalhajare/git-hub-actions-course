@@ -17,7 +17,7 @@ jobs:
                 echo "Linting and Building the project"
     unit-test:
         runs-on: ubuntu-latest
-        continue-on-error: true
+        continue-on-error: true # this will allow the workflow to continue even if this job fails
         steps:
             - name: Run Unit Tests
               run: |
