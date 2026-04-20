@@ -31,4 +31,4 @@ jobs:
             - name: deploy
               run: |
                echo "Deploying application"
-               cat $GITHUB_OUTPUT
+               
