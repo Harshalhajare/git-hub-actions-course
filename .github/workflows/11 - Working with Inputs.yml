@@ -12,7 +12,7 @@ on:
                 type: environment
                 description: "target environment for deployment"
                 required: true
-                default: non-prod
+                default: staging
 
             version:
                 type: choice
