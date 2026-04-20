@@ -2,6 +2,14 @@ name: 12 - Working with Outputs
 
 on:
     workflow_dispatch:
+        inputs:
+            build-status:
+                description: 'Status of the build'
+                type: choice
+                options:
+                    - success
+                    - failure
+                default: success
 
 jobs:
     build:
@@ -13,7 +21,7 @@ jobs:
               run: echo "GITHUB_OUTPUT is $GITHUB_OUTPUT"
             - name: Build
               id: build
-              run: echo "status=success" >> $GITHUB_OUTPUT"
+              run: echo "status=${{ inputs.build-status }}" >> $GITHUB_OUTPUT"
 
     deploy:
         runs-on: ubuntu-latest
