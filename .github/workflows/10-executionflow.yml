@@ -2,7 +2,7 @@ name: 10-controling the execution flow
 
 on:
     workflow_dispatch:
-        input:
+        inputs:
          pass-unit-tests:
             type: boolean
             description: "Did the code pass unit tests?"
