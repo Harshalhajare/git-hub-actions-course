@@ -30,5 +30,6 @@ jobs:
         steps:
             - name: deploy
               run: |
-               echo "Deploying application"
+               echo "Deploying application" >> $GITHUB_OUTPUT
+               cat "$GITHUB_OUTPUT"
                
