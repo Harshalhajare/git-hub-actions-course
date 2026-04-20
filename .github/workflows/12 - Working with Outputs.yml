@@ -29,4 +29,6 @@ jobs:
         if: needs.build.outputs.b-status == 'success'
         steps:
             - name: deploy
-              run: echo "Deploying application"
+              run: |
+               echo "Deploying application"
+               cat $GITHUB_OUTPUT
