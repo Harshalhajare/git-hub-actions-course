@@ -10,7 +10,7 @@ jobs:
         name: ${{ matrix.os }}-${{ matrix.node-version }}
         runs-on: ubuntu-latest
         strategy:
-            fail-fast: true # this will make sure that even if one of the jobs fail, other jobs will continue to run and we can see all the results in the end
+            fail-fast: true # False: this will make sure that even if one of the jobs fail, other jobs will continue to run and we can see all the results in the end
             matrix:
                 node-version: [18.x, 20.x, 21.x]
                 os:
