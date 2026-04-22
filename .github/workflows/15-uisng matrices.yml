@@ -41,9 +41,9 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
             matrix:
-                color: [red, green, blue]
-                shape: [square, circle, triangle]
-                size: [small, medium, large]
+                color: [red, greene]
+                shape: [square, circle]
+                size: [small, large]
                 include:
                     - color: red
                       shape: triangle
