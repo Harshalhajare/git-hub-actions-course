@@ -52,10 +52,12 @@ jobs:
                       opacity: 100
                     - color: red
                       shape: triangle
-                exclude:
+                exclude: #this will exclude the combination of values defined below from the matrixes
                     - color: green
                       shape: circle
                       size: small
+                    - opacity: 100
+                      shape: square
 
         steps:
             - name: perform tests
