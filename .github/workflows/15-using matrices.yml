@@ -41,7 +41,7 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
             matrix:
-                color: [red, greene]
+                color: [red, green]
                 shape: [square, circle]
                 size: [small, large]
                 include:
@@ -52,6 +52,11 @@ jobs:
                       opacity: 100
                     - color: red
                       shape: triangle
+                exclude:
+                    - color: green
+                      shape: circle
+                      size: small
+
         steps:
             - name: perform tests
               run: |
