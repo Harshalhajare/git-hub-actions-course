@@ -16,10 +16,23 @@ jobs:
                 os:
                     - ubuntu-latest
                     - windows-latest
+                include:
+                    - os: ubuntu-latest
+                      node-version: 16.x # this adds new value to matrixes along with above defined
+                    - os: ubuntu-latest
+                      node-version: 21.x # this adds new value to matrixes along with above defined
+                      tag: experimental #to view fail-fast in action, we can add tag to this job and then filter it in the workflow run page
         steps:
             - name: set up node
               uses: actions/setup-node@v3
               with: 
                 node-version: ${{ matrix.node-version }}
+            - name: Fail if experimental
+              if: ${{ matrix.tag == 'experimental' }}
+              run: exit 1
             - name: perform tests
-              run: echo "running tests on ${{ matrix.os }} with node version  ${{ matrix.node-version }}"
+              run: |
+                echo "running tests on ${{ matrix.os }} with node version  ${{ matrix.node-version }}"
+                sleep 10
+            - name: Upload test results
+              run: echo "Uploading test results"
