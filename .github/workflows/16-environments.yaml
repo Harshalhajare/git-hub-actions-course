@@ -6,11 +6,12 @@ on:
             environment:
                 target-env:
                     type: environment
+                    default: staging
 
 jobs:
     echo:
         runs-on: ubuntu-latest
-        environment: ${{ inputs.environment.target-env }}
+        environment: ${{ inputs.target-env }}
         env:
             my_env_var: ${{ vars.my_env_var || 'default value' }}
         steps:
