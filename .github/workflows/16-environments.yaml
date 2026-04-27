@@ -3,7 +3,6 @@ name: 16- working with environments
 on:
     workflow_dispatch:
         inputs:
-            environment:
                 target-env:
                     type: environment
                     default: staging
