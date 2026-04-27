@@ -10,11 +10,9 @@ on:
 jobs:
     echo:
         runs-on: ubuntu-latest
+        environment: ${{ inputs.environment.target-env }}
+        env:
+            my_env_var: ${{ vars.my_env_var || 'default value' }}
         steps:
             - name: echo environment
-              run: echo "The environment is ${{ inputs.environment }}"
-              env:
-                  my_env_var: ${{ vars.my_env_var || 'default value' }}
-              steps:
-                - name: echo environment
-                  run: echo "Env var is ${{ env.my_env_var }}"
+              run: echo "Env var is ${{ env.my_env_var }}"
