@@ -16,4 +16,4 @@ jobs:
             - name: Print outputs
               run: |
                 echo "Build Status: ${{ needs.deploy-called.outputs.build-status }}"
-                echo "Deployed URL: ${{ needs.deploy.outputs.url }}"
+                echo "Deployed URL: ${{ needs.deploy-called.outputs.url }}"
