@@ -1,0 +1,22 @@
+name: 19-concurrency
+
+on:
+    workflow_dispatch:
+
+concurrency:
+    group: ${{github.workflow}}-${{github.ref}}
+    cancel-in-progress: true
+
+jobs:
+    ping:
+        runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v4
+        - name: Ping url
+          id: ping-url
+          uses: actions/github-script@v6
+          with:
+            url: https://httpbin.org/get
+            max-retries: 3
+            delay: 5
+          run: echo "ping"
