@@ -8,6 +8,8 @@ concurrency:
 
 jobs:
     ping-with-concurrency:
+        concurrency:
+            group: ${{github.workflow}}-${{github.ref}}
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
