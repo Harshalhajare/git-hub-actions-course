@@ -14,9 +14,8 @@ jobs:
         - uses: actions/checkout@v4
         - name: Ping url
           id: ping-url
-          uses: actions/github-script@v6
           with:
             url: https://httpbin.org/get
-            max-retries: 3
+            max-retries: 20
             delay: 5
           run: echo "ping"
