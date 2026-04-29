@@ -3,8 +3,6 @@ name: 19-2-manage concurrency
 on:
     workflow_dispatch:
 
-concurrency:
-    group: ${{github.workflow}}-${{github.ref}}
 
 jobs:
     ping-with-concurrency:
